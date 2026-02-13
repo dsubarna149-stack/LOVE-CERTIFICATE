@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Love Bond Certificate</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Great+Vibes&display=swap');
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #fce4ec;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .no-print {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            text-align: center;
+            width: 400px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            border: 2px solid #f48fb1;
+            border-radius: 8px;
+            outline: none;
+            width: 80%;
+        }
+
+        button {
+            background: #d81b60;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Certificate Container 3:2 Ratio */
+        #certificate {
+            width: 600px;  
+            height: 900px; 
+            position: relative;
+            display: none; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            /* Tomar deya specific link ekhane add kora hoyeche */
+            background-image: url('https://img.sanishtech.com/u/3e6e997e39e4c5575ad8f9bc28f00ce4.jpg'); 
+            background-size: cover;
+            background-position: center;
+            border: 12px solid #fff;
+            overflow: hidden;
+        }
+
+        .overlay {
+            background: rgba(255, 255, 255, 0.35); /* Halka white layer readability-r jonno */
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        .border-inner {
+            border: 2px solid #ad1457;
+            height: 100%;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            box-sizing: border-box;
+            background: rgba(255, 250, 250, 0.2);
+        }
+
+        /* Registry Stamp */
+        .stamp {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px;
+            height: 100px;
+            border: 4px double #ad1457;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+            color: #ad1457;
+            transform: rotate(-15deg);
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        .shloka {
+            font-size: 18px;
+            color: #880e4f;
+            margin-top: 100px;
+            font-weight: 700;
+            line-height: 1.5;
+            text-shadow: 1px 1px 2px white;
+        }
+
+        h1 {
+            font-size: 30px;
+            color: #4a148c;
+            margin: 25px 0 10px 0;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #f48fb1;
+            padding-bottom: 5px;
+        }
+
+        .content {
+            font-size: 15px;
+            color: #111;
+            line-height: 1.6;
+            margin: 15px 0;
+            font-weight: 500;
+            max-width: 90%;
+        }
+
+        .names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 45px;
+            color: #d81b60;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.9);
+        }
+
+        .promise {
+            font-size: 14px;
+            font-style: italic;
+            color: #ad1457;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .signature-section {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-top: auto;
+            margin-bottom: 30px;
+        }
+
+        .sig-box {
+            width: 180px;
+            border-top: 2px solid #333;
+            font-size: 12px;
+            padding-top: 8px;
+            color: #000;
+            font-weight: bold;
+        }
+
+        @media print {
+            .no-print { display: none; }
+            body { background: none; padding: 0; }
+            #certificate { 
+                display: block !important; 
+                box-shadow: none; 
+                border: none;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print">
+        <h2 style="color:#d81b60;">💞 Love Registry 4K</h2>
+        <input type="text" id="boy" placeholder="BF Name">
+        <input type="text" id="girl" placeholder="GF Name">
+        <br>
+        <button onclick="generate()">Generate Bond</button>
+        <button onclick="window.print()" style="background:#444;">Download as PDF</button>
+    </div>
+
+    <div id="certificate">
+        <div class="overlay">
+            <div class="border-inner">
+                <div class="stamp">
+                    REGISTRY<br>OF LOVE<br>♥<br>OFFICIAL
+                </div>
+
+                <div class="shloka">"যদেতদ্ধৃদয়ং তব তদস্তু হৃদয়ং মম।<br>যদিদং হৃদয়ং মম তদস্তু হৃদয়ং তব॥"</div>
+
+                <h1>অঙ্গীকারনামা</h1>
+                
+                <div class="content">
+                    এই শংসাপত্রটি চিরস্থায়ী সাক্ষ্য দিচ্ছে যে, আজ থেকে পবিত্র ভালোবাসার এক অবিচ্ছেদ্য বন্ধনে আবদ্ধ হলেন—
+                </div>
+
+                <div class="names" id="displayNames">Boy & Girl</div>
+
+                <div class="content">
+                    তাঁরা শপথ করছেন যে, জীবনের প্রতিটি পদক্ষেপে একে অপরের পরিপূরক হয়ে থাকবেন। কোনো অমিল তাঁদের আলাদা করতে পারবে না, বরং বিশ্বাস আর সম্মান দিয়ে তাঁরা এই সম্পর্ককে আগলে রাখবেন চিরকাল।
+                </div>
+
+                <div class="promise">
+                    "যতক্ষণ হৃদস্পন্দন থাকবে, ততক্ষণ পাশে থাকবো। আমাদের এই পথচলা হোক অনন্তকালের। আমরা কখনো হাত ছেড়ে দেবো না।"
+                </div>
+
+                <div class="signature-section">
+                    <div class="sig-box">SIGNATURE OF THE MAN</div>
+                    <div class="sig-box">SIGNATURE OF THE GIRL</div>
+                </div>
+
+                <div style="font-size: 11px; color: #222; font-weight: bold;">
+                    ISSUE DATE: <span id="date"></span> | REF: LOVE-STABLE-2026
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generate() {
+            const b = document.getElementById('boy').value;
+            const g = document.getElementById('girl').value;
+            if(!b || !g) return alert("Doya kore duto naam e likhun!");
+
+            document.getElementById('displayNames').innerText = b + " & " + g;
+            document.getElementById('certificate').style.display = 'block';
+            document.getElementById('date').innerText = new Date().toLocaleDateString('bn-BD');
+        }
+    </script>
+</body>
+</html>
